@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<body background="{% static 'img/login.jpeg' %} ">
+
+<br>
+<br>
+<div class="container">
+<div class="card">
+<div class="card-body">
+<br>
+<form method="post">
+{% csrf_token %}
+  <div class="form-group">
+      <input type="text" name="username" id="id_username" class="form-control" placeholder="username" autofocus="true">
+    </div>
+  <div class="form-group">
+      <input type="password" name="password" id="id_password" class="form-control" placeholder="password" autofocus="true">
+    </div>
+  <div class="form-group"> 
+          <button type="submit" class="btn btn-info btn-lg btn-block">Login</button>
+    </div>
+ </div>
+</form>
+
+
+<br>
+
+</div>
+</div>
+{% endblock %}

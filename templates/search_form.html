@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+<br>
+
+<div class="container">
+    <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">Select a semester</h5>
+          <form  action="{% url 'search'  %}" method="get">
+           <select class="form-control" name="session">
+           {% for session in sessions %}
+           <option value="{{session.tag}}">{{session.tag}}</option>
+           {% endfor %}
+          </select>
+          <br>
+          <select class="form-control" name="semester">
+           <option value="First Semester">First Semester</option>
+           <option value="Second Semester">Second Semester</option>
+          </select>
+            <input type="submit" class="btn btn-info mt-2" value="Check">
+            </form>
+        </div>
+      </div>
+{% endblock %}

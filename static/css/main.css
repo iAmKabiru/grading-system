@@ -1,0 +1,9 @@
+body {
+  background-color: #eee;
+}
+nav {
+  box-shadow: 10px 10px 8px 2px #888888;
+}
+.card-title {
+  text-align: center;
+}

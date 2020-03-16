@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container-fluid mt-5">
+  <div class="card" >
+    <div class="card-body">
+      <div class="table table-responsive">
+        <table class="table table-bordered">
+          <tr>
+            <td>Name: <strong>{{request.user.get_full_name}}</strong></td>
+            <td>Roll Number: <strong>{{request.user.roll_number}}</strong></td>
+            <td>Email: <strong>{{request.user.email}}</strong></td>
+          </tr>
+          <tr>
+          <td>Department: <strong>{{request.user.department}}</strong></td>
+          <td>Session: <strong>{{session}}</strong></td>
+          <td>Semester: <strong>{{semester}}</strong></td>
+          </tr>
+          </table>
+        </div>
+
+    <div class="table table-responsive">
+    <table class="table table-bordered">
+
+    <thead>
+    <tr>
+    <td>s/n</td>
+    <td>code</td>
+    <td>title</td>
+    <td>credit units</td>
+    <td>attendance</td>
+    <td>test</td>
+    <td>exam</td>
+    <td>total</td>
+    <td>grade unit</td>
+    <td>grade point</td>
+    <td>grade</td>
+    </tr>
+
+    </thead>
+
+    {% if enrollement %}
+    <tbody>
+    {% for enroll in enrollement %}
+    <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{enroll.course.code}}</td>
+    <td>{{enroll.course.title}}</td>
+    <td>{{enroll.course.units}}</td>
+    <td>{{enroll.attendance_score}}</td>
+    <td>{{enroll.test_score}}</td>
+    <td>{{enroll.exam_score}}</td>
+    <td>{{enroll.total_score}}</td>
+    <td>{{enroll.grade_unit}}</td>
+    <td>{{enroll.grade_point}}</td>
+    <td>{{enroll.grade}}</td>
+     {% endfor %}
+    </tr>
+    </tbody>
+  {% endif %}  
+  </table>
+  </div>
+
+ <div class="table table-responsive">
+  <table class="table table-bordered">
+  <tr>
+  <td>Total credit units: <strong>{{tcu}}</strong></td>
+  <td>Total Grade Points: <strong>{{tgp}}</strong></td>
+  <td>GPA: <strong>{{gpa}}</strong></td>
+  </tr>
+  </table>
+  </div>
+
+    </div>
+    </div>
+</div>
+
+{% endblock %}
