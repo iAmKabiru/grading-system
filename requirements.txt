@@ -1,1 +1,10 @@
-python-3.6.7
+dj-database-url==0.4.2
+Django==2.1.4
+python-decouple==3.1
+whitenoise==3.3.0
+pytz==2018.9
+sqlparse==0.3.0
+static==1.1.1
+pystache
+Markdown
+gunicorn==19.7.1
