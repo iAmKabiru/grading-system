@@ -1,0 +1,1 @@
+web: gunicorn grading_system.wsgi --log-file -
